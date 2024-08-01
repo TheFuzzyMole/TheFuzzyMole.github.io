@@ -1,0 +1,21 @@
+.home {
+    height: 100%;
+    padding-top: 40vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(0deg, $primary-colour, darken($secondary-colour, 15%)) center top;
+    background-size: cover;
+
+    &__name {
+        font-size: 5rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid set-text-colour($primary-colour);
+
+        &--last {
+            color: $secondary-colour;
+            font-weight: 700;
+        }
+    }
+}
