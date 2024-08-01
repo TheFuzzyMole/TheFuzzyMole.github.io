@@ -1,0 +1,32 @@
+$ColorPrimary: #7b13e3;
+$ColorSecondary: #1fb7e6;
+$ColorText: #fff;
+$FontWeights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
+@mixin linearGrad($angle, $firstCol, $secondCol)
+{
+    background: -webkit-linear-gradient($angle, $firstCol, $secondCol);
+    background: -moz-linear-gradient($angle, $firstCol, $secondCol);
+    background: -ms-linear-gradient($angle, $firstCol, $secondCol);
+    background: -o-linear-gradient($angle, $firstCol, $secondCol);
+    background: linear-gradient($angle, $firstCol, $secondCol);
+}
+
+body{
+    @include linearGrad(155deg, $ColorPrimary 0%, $ColorSecondary 75%);
+    height: 100vh;
+    color: $ColorText;
+    font-weight: map-get($FontWeights, "regular");
+}
+
+.main{
+    width: 80%;
+    margin: 0 auto;
+    p{
+        font-weight: map-get($FontWeights, "bold");
+    }
+}

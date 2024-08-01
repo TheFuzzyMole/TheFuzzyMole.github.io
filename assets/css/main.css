@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(155deg, #7b13e3 0%, #1fb7e6 75%);
+  height: 100vh;
+  color: #fff;
+  font-weight: 400;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+.main p {
+  font-weight: 700;
+}/*# sourceMappingURL=main.css.map */
