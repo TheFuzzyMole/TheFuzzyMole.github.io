@@ -112,44 +112,56 @@ body {
   content: "";
   pointer-events: none;
   position: absolute;
-  top: 100%;
+  top: 40%;
   left: 0;
   height: 100%;
   width: 100%;
   background: linear-gradient(0deg, rgba(39, 39, 39, 0.8) 55%, rgba(39, 39, 39, 0) 100%);
-  opacity: 0;
+  opacity: 1;
   transition: all 0.25s ease-in-out;
 }
-.filter__panel--link img {
+.filter__panel--link * {
   width: 100%;
 }
 .filter__panel--link:hover::after {
-  top: 40%;
+  top: 0%;
   opacity: 1;
 }
 .filter__panel--link:hover + .filter__panel__info {
+  bottom: 40%;
   transition: all 0.25s ease-in-out;
-  bottom: 0;
-  top: auto;
+}
+.filter__panel--link:hover + .filter__panel__info .filter__panel__info--flavour {
   opacity: 1;
 }
 .filter__panel__info {
   pointer-events: none;
   position: absolute;
-  top: 100%;
-  bottom: auto;
+  bottom: 0;
   margin: 0 0 5% 0;
   padding: 0 5%;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   color: #fff;
   transition: all 0.25s ease-in-out;
 }
 .filter__panel__info--title {
+  text-wrap: pretty;
   font-weight: 1000;
+  flex-shrink: 1;
+  font-size: 4cqw;
 }
 .filter__panel__info--tags {
-  font-size: 0.8rem;
+  font-size: 3cqw;
+}
+.filter__panel__info--flavour {
+  font-size: 2cqw;
+  position: absolute;
+  width: 90%;
+  top: 110%;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
 }
 .filter__panel.active {
   position: relative;
