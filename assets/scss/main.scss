@@ -1,4 +1,4 @@
-@import "config", "home", "projects", "responsive";
+@import "config", "home", "responsive";
 
 body{
     //@include linearGrad(155deg, $ColorPrimary 0%, $ColorSecondary 75%);
@@ -56,7 +56,10 @@ body {
 .filter__btns {
     display: flex;
     justify-content: center;
-    column-gap: 2rem;
+    flex-wrap: wrap;
+    width: 75vw;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
     color: set-text-colour($primary-colour);
     padding: 1rem 0 0 0;
 }
