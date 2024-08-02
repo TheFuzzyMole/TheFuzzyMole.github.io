@@ -140,11 +140,11 @@ body {
             content: '';
             pointer-events: none;
             position: absolute;
-            top: 40%;
+            top: 30%;
             left: 0;
             height: 100%;
             width: 100%;
-            background: linear-gradient(0deg, rgba($primary-colour,.8)55%, rgba($primary-colour,0)100%);
+            background: linear-gradient(0deg, rgba($primary-colour,.9)65%, rgba($primary-colour,0)100%);
             opacity: 1;
             @include transition-ease;
         }
@@ -170,7 +170,7 @@ body {
             }
         }
         &:hover + .filter__panel__info {
-            bottom: 40%;
+            bottom: 35%;
             @include transition-ease;
 
             .filter__panel__info--flavour {

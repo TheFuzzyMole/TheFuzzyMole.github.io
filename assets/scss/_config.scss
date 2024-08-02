@@ -4,6 +4,10 @@ $filterPanelFontSizeTitle: 5cqw;
 $filterPanelFontSizeTag: 4cqw;
 $filterPanelFontSizeFlavour: 3cqw;
 
+html {
+    font-size: 16px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,12 +32,22 @@ $filterPanelFontSizeFlavour: 3cqw;
     }
 }
 @mixin media-lg {
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1080px) {
         @content;
     }
 }
 @mixin media-xl {
     @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+@mixin media-2k {
+    @media screen and (min-width: 2560px) {
+        @content;
+    }
+}
+@mixin media-4k {
+    @media screen and (min-width: 3440px) {
         @content;
     }
 }

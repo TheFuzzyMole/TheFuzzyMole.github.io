@@ -79,6 +79,19 @@
     }
 }
 
+@include media-2k {
+    html {
+        font-size: 24px;
+    }
+}
+
+@include media-4k {
+    html {
+        font-size: 32px;
+    }
+}
+
+
 @media (hover:none) {
     .filter__panel--link {
         &::after{
