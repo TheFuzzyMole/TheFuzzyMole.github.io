@@ -4,9 +4,10 @@ body{
     //@include linearGrad(155deg, $ColorPrimary 0%, $ColorSecondary 75%);
     background: #fff;
     color: set-text-colour($primary-colour);
-    height: 100vh;
     font-family: 'Chakra Petch', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1;
+    display: flex;
+
 }
 
 h1, h2, h3{
@@ -18,31 +19,46 @@ a{
     text-decoration: none;
 }
 
-.text-secondary {
-    color: $secondary-colour;
-}
-
-.bio {
+.bio{
     z-index: 2;
     top: 0;
+    height: 7rem;
     width: 100%;
     padding: 1rem;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    align-content: stretch;
+    justify-content: start;
     background: $primary-colour;
-    color: set-text-colour($primary-colour);
 
-    &__name {
-        font-weight: 700;
+    &__mug {
+        margin-right: 1rem;
+        flex-shrink: 1;
+        left: 0;
+        position: relative;
+        height: 100%;
+        border-radius: 50%;
     }
 
-    &__tag{
-        font-weight: 400;
-        border-top: 0.1rem solid set-text-colour($primary-colour);
-        padding: 0.5rem 0 0 0;
-        margin: 0.5rem 0 0 0;
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-self: center;
+        color: set-text-colour($primary-colour);
+
+        &__name {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        
+        &__tag{
+            font-weight: 400;
+            font-size: 1rem;
+            border-top: 0.1rem solid $secondary-colour;
+            padding: 0.5rem 0 0 0;
+            margin: 0.5rem 0 0 0;
+        }
     }
 }
 
@@ -83,7 +99,7 @@ body {
     width: 75vw;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
+    gap: 2rem 2rem;
     justify-items: stretch;
     padding: 0 0 4rem 0;
 }
