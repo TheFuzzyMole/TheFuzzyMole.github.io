@@ -1,26 +1,24 @@
-const menuBtn = document.querySelector('.menu-btn');
-const hamburger = document.querySelector('.menu-btn__burger');
-const nav = document.querySelector('.nav');
-const menuNav = document.querySelector('.menu-nav');
-const navItems = document.querySelectorAll('.menu-nav__item');
+const filterBtns = document.querySelectorAll('.filter__btn');
+const filterPanels = document.querySelectorAll('.filter__panel');
 
-let showMenu = false;
+let currentfilter = 0;
 
-menuBtn.addEventListener('click', toggleMenu);
+function filterClicked(id) {
+    console.log(id);
+    if(id == currentfilter){return;}
 
-function toggleMenu() {
-    if(!showMenu)
+    filterBtns.forEach(btn => { if(btn.classList.contains('active')){btn.classList.remove('active')};});
+    filterBtns.forEach(btn => { if(btn.id == id){btn.classList.add('active')};});
+
+    if(id == 0)
     {
-        hamburger.classList.add('open');
-        nav.classList.add('open');
-        menuNav.classList.add('open');
-        navItems.forEach(item => item.classList.add('open'));
-        showMenu = true;
-    } else {
-        hamburger.classList.remove('open');
-        nav.classList.remove('open');
-        menuNav.classList.remove('open');
-        navItems.forEach(item => item.classList.remove('open'));
-        showMenu = false;
+        filterPanels.forEach(pnl => {if(!pnl.classList.contains('active')){pnl.classList.add('active')};});
     }
+    else
+    {
+        filterPanels.forEach(pnl => {if(pnl.classList.contains('active')){pnl.classList.remove('active')};});
+        filterPanels.forEach(pnl => {if(pnl.classList.contains(`f${id}`)){pnl.classList.add('active')};});
+    }
+
+    currentfilter = id;
 }
