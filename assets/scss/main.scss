@@ -1,4 +1,4 @@
-@import "config", "responsive";
+@import "config";
 
 body{
     //@include linearGrad(155deg, $ColorPrimary 0%, $ColorSecondary 75%);
@@ -82,7 +82,8 @@ body {
 .filter__panels {
     width: 75vw;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
     justify-items: stretch;
     padding: 0 0 4rem 0;
 }
@@ -124,7 +125,9 @@ body {
         }
 
         * {
-            width:100%;
+            object-fit: cover;
+            width: calc(75vw - 2rem);
+            height: calc(75vw - 2rem);
         }
 
         &:hover {
@@ -160,15 +163,15 @@ body {
             font-weight: 1000;
             flex-shrink: 1;
             //font-size: min(1.5rem, 4cqw);
-            font-size: 4cqw;
+            font-size: $filterPanelFontSizeTitle;
         }
 
         &--tags{
-            font-size: 3cqw;
+            font-size: $filterPanelFontSizeTag;
         }
 
         &--flavour {
-            font-size: 2cqw;
+            font-size: $filterPanelFontSizeFlavour;
             position: absolute;
             width: 90%;
             top: 110%;
@@ -212,3 +215,5 @@ footer {
         text-align: right;
     }
 }
+
+@import "responsive";
