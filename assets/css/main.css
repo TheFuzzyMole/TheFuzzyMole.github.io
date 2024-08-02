@@ -4,135 +4,6 @@
   padding: 0;
 }
 
-.projects {
-  padding-bottom: 2rem;
-}
-.projects__bio-image {
-  height: 30vh;
-  width: 100%;
-  background: linear-gradient(0deg, #272727, #0aa4c4) center top;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-.projects__bio-image .text-secondary {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.projects__items {
-  width: 60vw;
-  margin: 2rem auto 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
-}
-.projects__item {
-  position: relative;
-  border-bottom: 5px solid #26d1f4;
-  overflow: hidden;
-  cursor: pointer;
-}
-.projects__item img {
-  width: 100%;
-}
-.projects__item::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #0bb8dc;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-}
-.projects__item:hover::after {
-  top: 0;
-  opacity: 0.9;
-}
-.projects__item:hover .projects__btn {
-  opacity: 1;
-}
-.projects__btns {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  text-align: center;
-}
-.projects__btn {
-  opacity: 0;
-  color: #000;
-  transition: all 0.2s ease-in-out;
-}
-.projects__btn:hover {
-  color: #fff;
-}
-.projects .social-icons {
-  display: flex;
-  flex-direction: column;
-}
-.projects footer {
-  transform: rotate(90deg) translate(-4rem, -4rem);
-}
-
-@media screen and (min-width: 768px) {
-  .menu-btn {
-    visibility: hidden;
-  }
-  .nav {
-    visibility: visible;
-  }
-  .nav .menu-nav {
-    display: block;
-    transform: translateY(0);
-    height: 100%;
-    z-index: 2;
-    text-align: right;
-  }
-  .nav .menu-nav__item {
-    display: inline;
-    padding-right: 1.5rem;
-    transform: translateX(0);
-  }
-  .nav .menu-nav__link {
-    font-size: 1.5rem;
-  }
-  .about__bio {
-    font-size: 1.5rem;
-  }
-  .projects__bio-image {
-    height: 40vh;
-  }
-  .projects__items {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .projects .text-secondary {
-    font-size: 3rem;
-  }
-  .contact__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (min-width: 1024px) {
-  .projects__items {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .contact__list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (min-width: 1600px) {
-  .projects__bio-image {
-    height: 45vh;
-  }
-}
 body {
   background: #fff;
   color: #fff;
@@ -186,8 +57,11 @@ body {
 .filter__btns {
   display: flex;
   justify-content: center;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  flex-wrap: wrap;
+  width: 75vw;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 0.5rem;
   color: #fff;
   padding: 1rem 0 0 0;
 }
@@ -197,10 +71,9 @@ body {
   padding: 0.5rem 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  flex-basis: 8%;
   text-align: center;
   text-wrap: nowrap;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .filter__btn.active {
   background-color: #26d1f4;
@@ -210,13 +83,14 @@ body {
 .filter__panels {
   width: 75vw;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
+  justify-items: stretch;
   padding: 0 0 4rem 0;
 }
 
 .filter__panel {
   margin: 1rem;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,6 +106,7 @@ body {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  width: 100%;
 }
 .filter__panel--link::after {
   content: "";
@@ -243,14 +118,17 @@ body {
   width: 100%;
   background: linear-gradient(0deg, rgba(39, 39, 39, 0.8) 55%, rgba(39, 39, 39, 0) 100%);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.filter__panel--link img {
+  width: 100%;
 }
 .filter__panel--link:hover::after {
   top: 40%;
   opacity: 1;
 }
 .filter__panel--link:hover + .filter__panel__info {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
   bottom: 0;
   top: auto;
   opacity: 1;
@@ -260,11 +138,12 @@ body {
   position: absolute;
   top: 100%;
   bottom: auto;
-  margin: 0 0 2rem 0;
+  margin: 0 0 5% 0;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
   color: #fff;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .filter__panel__info--title {
   font-weight: 1000;
@@ -292,7 +171,7 @@ footer {
 }
 footer .social-icons a {
   padding: 0.4rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 footer .social-icons a:hover {
   color: #26d1f4;
