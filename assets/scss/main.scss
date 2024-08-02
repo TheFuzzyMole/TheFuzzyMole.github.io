@@ -126,6 +126,7 @@ body {
         align-items: center;
         overflow: hidden;
         width:100%;
+        //border-radius: 3%;
 
         &::after {
             content: '';
@@ -146,10 +147,18 @@ body {
             height: calc(75vw - 2rem);
         }
 
+        a {
+            pointer-events: none;
+        }
+
         &:hover {
             &::after{
                 top: 0%;
                 opacity: 1;
+            }
+
+            a{
+                pointer-events: auto;
             }
         }
         &:hover + .filter__panel__info {
@@ -178,11 +187,13 @@ body {
             text-wrap:pretty;
             font-weight: 1000;
             flex-shrink: 1;
-            //font-size: min(1.5rem, 4cqw);
             font-size: $filterPanelFontSizeTitle;
         }
 
         &--tags{
+            margin-top: 0.2rem;
+            border-top: 0.1rem solid $secondary-colour;
+            padding-top: 0.2rem;
             font-size: $filterPanelFontSizeTag;
         }
 

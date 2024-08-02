@@ -140,9 +140,15 @@ body {
   width: calc(75vw - 2rem);
   height: calc(75vw - 2rem);
 }
+.filter__panel--link a {
+  pointer-events: none;
+}
 .filter__panel--link:hover::after {
   top: 0%;
   opacity: 1;
+}
+.filter__panel--link:hover a {
+  pointer-events: auto;
 }
 .filter__panel--link:hover + .filter__panel__info {
   bottom: 40%;
@@ -170,6 +176,9 @@ body {
   font-size: 5cqw;
 }
 .filter__panel__info--tags {
+  margin-top: 0.2rem;
+  border-top: 0.1rem solid #26d1f4;
+  padding-top: 0.2rem;
   font-size: 4cqw;
 }
 .filter__panel__info--flavour {
