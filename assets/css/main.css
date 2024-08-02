@@ -120,7 +120,7 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   visibility: hidden;
 }
 .filter__panel a {
@@ -178,14 +178,12 @@ body {
   padding: 0 5%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   color: #fff;
   transition: all 0.25s ease-in-out;
 }
 .filter__panel__info--title {
   text-wrap: balance;
   font-weight: 1000;
-  flex-shrink: 1;
   font-size: 5cqw;
 }
 .filter__panel__info--tags {

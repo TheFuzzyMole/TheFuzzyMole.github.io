@@ -117,7 +117,7 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     visibility: hidden;
     
     a {
@@ -187,14 +187,12 @@ body {
         padding: 0 5%;
         display: flex;
         flex-direction: column;
-        align-items: stretch;
         color: set-text-colour($primary-colour);
         @include transition-ease;
 
         &--title {
             text-wrap:balance;
             font-weight: 1000;
-            flex-shrink: 1;
             font-size: $filterPanelFontSizeTitle;
         }
 
