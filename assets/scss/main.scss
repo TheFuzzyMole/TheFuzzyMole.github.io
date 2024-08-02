@@ -1,4 +1,4 @@
-@import "config", "home", "responsive";
+@import "config", "responsive";
 
 body{
     //@include linearGrad(155deg, $ColorPrimary 0%, $ColorSecondary 75%);
@@ -89,7 +89,7 @@ body {
 
 .filter__panel {
     margin: 1rem;
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
