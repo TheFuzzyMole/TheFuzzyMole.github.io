@@ -119,6 +119,8 @@ body {
     flex-direction: column;
     align-items: flex-start;
     visibility: hidden;
+    opacity: 0;
+    @include transition-ease;
     
     a {
         position: relative;
@@ -217,6 +219,7 @@ body {
     &.active {
         position: relative;
         visibility: visible;
+        opacity: 1;
     }
 
 }

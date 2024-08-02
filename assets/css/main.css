@@ -122,6 +122,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
 }
 .filter__panel a {
   position: relative;
@@ -204,6 +206,7 @@ body {
 .filter__panel.active {
   position: relative;
   visibility: visible;
+  opacity: 1;
 }
 
 footer {
