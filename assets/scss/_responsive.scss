@@ -78,3 +78,23 @@
         }
     }
 }
+
+@media (hover:none) {
+    .filter__panel--link {
+        &::after{
+            opacity: 1;
+        }
+
+        a{
+            pointer-events: auto;
+        }
+    }
+    .filter__panel__info {
+        @include transition-ease;
+
+        .filter__panel__info--flavour {
+            //color: #000;
+            opacity: 0;
+        }
+    }
+}

@@ -28,7 +28,7 @@ a{
     display: flex;
     align-items: center;
     align-content: stretch;
-    justify-content: start;
+    justify-content: flex-start;
     background: $primary-colour;
 
     &__mug {
@@ -67,6 +67,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#bgVid {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    right:0;
+    bottom: 0;
+    z-index:-1;
 }
 
 .filter__btns {
@@ -184,7 +193,7 @@ body {
         @include transition-ease;
 
         &--title {
-            text-wrap:pretty;
+            text-wrap:balance;
             font-weight: 1000;
             flex-shrink: 1;
             font-size: $filterPanelFontSizeTitle;
@@ -199,6 +208,7 @@ body {
 
         &--flavour {
             font-size: $filterPanelFontSizeFlavour;
+            text-wrap: balance;
             position: absolute;
             width: 90%;
             top: 110%;
