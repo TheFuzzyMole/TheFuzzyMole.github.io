@@ -1,11 +1,11 @@
-@import "config", "home", "menu", "about", "projects", "contact", "responsive";
+@import "config", "home", "projects", "responsive";
 
 body{
     //@include linearGrad(155deg, $ColorPrimary 0%, $ColorSecondary 75%);
-    background: $primary-colour;
+    background: #fff;
     color: set-text-colour($primary-colour);
     height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Chakra Petch', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1;
 }
 
@@ -22,22 +22,158 @@ a{
     color: $secondary-colour;
 }
 
-header {
-    position: fixed;
+.bio {
     z-index: 2;
+    top: 0;
     width: 100%;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: $primary-colour;
+    color: set-text-colour($primary-colour);
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__tag{
+        font-weight: 400;
+        border-top: 0.1rem solid set-text-colour($primary-colour);
+        padding: 0.5rem 0 0 0;
+        margin: 0.5rem 0 0 0;
+    }
 }
 
-main {
-    height: 100%;
+body {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .social-icons{
-        position: fixed;
-        bottom: 1rem;
-        left: 1rem;
+.filter__btns {
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+    color: set-text-colour($primary-colour);
+    padding: 1rem 0 0 0;
+}
 
+.filter__btn {
+    background-color: $primary-colour;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    flex-basis: 8%;
+    text-align: center;
+    text-wrap: nowrap;
+    @include transition-ease;
+    
+    &.active {
+        background-color: $secondary-colour;
+        color: set-text-colour($secondary-colour);
+    }
+}
+
+.filter__panels {
+    width: 75vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 0 4rem 0;
+}
+
+.filter__panel {
+    margin: 1rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    
+    a {
+        position: relative;
+        
+        width: 100%;
+        //height: fit-content;
+    }
+    
+    &--link {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        
+        
+        &::after {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(0deg, rgba($primary-colour,.8)55%, rgba($primary-colour,0)100%);
+            opacity: 0;
+            @include transition-ease;
+        }
+
+        &:hover {
+            &::after{
+                top: 40%;
+                opacity: 1;
+            }
+        }
+        &:hover + .filter__panel__info {
+            @include transition-ease;
+            bottom: 0;
+            top: auto;
+            opacity: 1;
+        }
+    }
+    &__info {
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        bottom: auto;
+        margin: 0 0 2rem 0;
+        display: flex;
+        flex-direction: column;
+        color: set-text-colour($primary-colour);
+        @include transition-ease;
+
+        &--title {
+            font-weight: 1000;
+        }
+
+        &--tags{
+            font-size: 0.8rem;
+        }
+    }
+
+    &.active {
+        position: relative;
+        visibility: visible;
+    }
+
+}
+
+footer {
+    position: fixed;
+    font-size: 1rem;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $primary-colour;
+    color: set-text-colour($primary-colour);
+
+    .social-icons {
         a{
             padding: 0.4rem;
             @include transition-ease;
@@ -47,13 +183,8 @@ main {
             }
         }
     }
-}
 
-footer {
-    font-size: 1rem;
-    position: fixed;
-    bottom: 0.4rem;
-    right: 1rem;
-    text-align: right;
-    color: set-text-colour($primary-colour);
+    .copyright {
+        text-align: right;
+    }
 }
