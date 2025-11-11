@@ -175,6 +175,7 @@ body {
 .filter__panel__info {
   pointer-events: none;
   position: absolute;
+  width: 100%;
   bottom: 0;
   margin: 0 0 5% 0;
   padding: 0 5%;
@@ -184,7 +185,7 @@ body {
   transition: all 0.25s ease-in-out;
 }
 .filter__panel__info--title {
-  text-wrap: balance;
+  text-wrap: pretty;
   font-weight: 1000;
   font-size: 5cqw;
 }
@@ -196,7 +197,7 @@ body {
 }
 .filter__panel__info--flavour {
   font-size: 3cqw;
-  text-wrap: balance;
+  text-wrap: pretty;
   position: absolute;
   width: 90%;
   top: 110%;
